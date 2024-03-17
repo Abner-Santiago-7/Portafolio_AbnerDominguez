@@ -1,0 +1,60 @@
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1rem;
+
+    .gallery-item {
+        position: relative;
+        width: 100%;
+        margin-bottom: 1rem;
+        border: 1px solid #e5e5e5;
+        padding: 0.5rem;
+        max-width: 320px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h3 {
+            padding: 0.5rem;
+            margin: 0;
+            width: 100%;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .price {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            bottom: 0.75rem;
+            right: 0.75rem;
+            padding: 0.5rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: @secondary-text-color;
+            background-color: @secondary-background-color;
+        }
+
+
+    }
+
+
+
+    @media (min-width:1024px) {
+
+        max-width: 1024px;
+        margin: 0.5rem auto;
+    }
+
+
+
+}

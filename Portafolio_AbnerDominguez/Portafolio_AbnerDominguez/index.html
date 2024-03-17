@@ -1,0 +1,204 @@
+<!-- Mi perfil de portafolio Abner Santiago Dominguez - 0203200300347 - Portales web II-->
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi perfil de portafolio de proyectos</title>
+    <link rel="stylesheet" href="less/style.less">
+
+
+    <style>
+        .sobremi {
+            display: flex;
+            background-color: #000;
+            color: #f7f7f7;
+        }
+
+        article {
+
+            text-align: -webkit-center;
+
+        }
+
+        #seccion1 {
+            width: 50%;
+            margin: 5px;
+            text-align: -webkit-auto;
+        }
+
+        #seccion1 p {
+            margin-top: 30px;
+        }
+
+        #seccion2 {
+            width: 50%;
+            text-align: right;
+        }
+
+        #seccion2 img {
+            width: 90%;
+        }
+
+
+        body {
+            margin: 0;
+            background-color: #f7f7f7;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        header {
+            text-align: center;
+        }
+
+        .logo {
+            width: 200px;
+        }
+
+        nav a {
+            color: #f7f7f7;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 0;
+            padding: 30px 15px;
+        }
+
+        nav a:hover {
+            color: rgb(255, 0, 0);
+            background-color: #f7f7f7;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.4s ease;
+        }
+
+        .proyectos {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .proyecto {
+            display: none;
+        }
+
+        .proyecto img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+        }
+
+        #btnAnterior,
+        #btnSiguiente {
+            margin-top: 10px;
+            cursor: pointer;
+            padding: 5px 10px;
+            font-size: 16px;
+            background-color: rgb(255, 0, 0);
+            color: #fff;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Mi Perfil</h1>
+        <img src="imgmia.png" alt="" class="logo">
+    </header>
+
+    <nav style="margin-top: 20px;text-align: center; padding: 20px 0; background-color: rgb(255, 0, 0);">
+        <a href="index.html">Inicio</a>
+        <a href="#">Sobre mi</a>
+        <a href="#">Proyectos</a>
+        <a href="#">Contacto</a>
+    </nav>
+
+    <main>
+        <section class="sobremi">
+            <section id="seccion1">
+                <article>
+                    <h2>Sobre mi</h2>
+                    <p>Soy Abner Santiago Dominguez, tengo 20 años, estudio en la Universidad Catolica de Honduras
+                        (Nuestra Señora Reina de la Paz) soy del campus Sagrado Corazon de Jesus. Estudio en la carrera
+                        de Ingenieria en Ciencias de la Computacion, y este es mi portafolio de proyectos</p>
+                    <p></p>
+                    <h2>Como contactarme</h2>
+                    <p>Puedes contactarme al siguiente correo electronico: abnerdominguez48@gmail.com o al telefono
+                        97991543</p>
+                </article>
+            </section>
+            <section id="seccion2">
+                <img src="ICC.jpg" alt="Logo ICC">
+            </section>
+        </section>
+
+        <section class="proyectos">
+            <h2>Mis Proyectos</h2>
+
+            <div class="proyecto">
+                <img src="images (1).jpg" alt="Proyecto 1">
+                <h3>Proyecto 1</h3>
+                <p>Proyecto sobre mundos.</p>
+            </div>
+            <div class="proyecto">
+                <img src="images (2).jpg" alt="Proyecto 2">
+                <h3>Proyecto 2</h3>
+                <p>Proyecto sobre impacto entre mundos.</p>
+            </div>
+            <div class="proyecto">
+                <img src="images.jpg" alt="Proyecto 3">
+                <h3>Proyecto 3</h3>
+                <p>Proyecto sobre la galaxia.</p>
+            </div>
+            <div class="proyecto">
+                <img src="psJennyfer.jpg" alt="Proyecto 4">
+                <h3>Proyecto 4</h3>
+                <p>Proyecto sobre la Guerra.</p>
+            </div>
+
+            <button id="btnAnterior">Anterior</button>
+            <button id="btnSiguiente">Siguiente</button>
+        </section>
+    </main>
+
+    <script>
+        let indexProyecto = 0;
+
+        function mostrarProyecto() {
+            const proyectos = document.querySelectorAll('.proyecto');
+
+            proyectos.forEach(proyecto => {
+                proyecto.style.display = 'none';
+            });
+
+            proyectos[indexProyecto].style.display = 'block';
+        }
+
+        function siguienteProyecto() {
+            const proyectos = document.querySelectorAll('.proyecto');
+            indexProyecto = (indexProyecto + 1) % proyectos.length;
+            mostrarProyecto();
+        }
+
+        function anteriorProyecto() {
+            const proyectos = document.querySelectorAll('.proyecto');
+            indexProyecto = (indexProyecto - 1 + proyectos.length) % proyectos.length;
+            mostrarProyecto();
+        }
+
+        document.getElementById('btnSiguiente').addEventListener('click', siguienteProyecto);
+        document.getElementById('btnAnterior').addEventListener('click', anteriorProyecto);
+
+        mostrarProyecto();
+    </script>
+
+    <p></p>
+
+    <footer style="text-align: center; color: #787878; margin: 20px;">
+        Abner Santiago Dominguez - Desarrollo de Portales Web 2024 - Todos los derechos reservados
+    </footer>
+
+
+</body>
+
+</html>
